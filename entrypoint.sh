@@ -14,4 +14,4 @@ EXCLUDE_PATTERN_ENTRIES=$(node /scripts/convert-array-to-args.js $3 --exclude-pa
 
 set -x
 
-git-auto-merger merge --base-branch=develop --include-pattern=$1 $INCLUDE_PATTERN_ENTRIES $EXCLUDE_PATTERN_ENTRIES
+git-auto-merger merge --base-branch=$1 $INCLUDE_PATTERN_ENTRIES $EXCLUDE_PATTERN_ENTRIES
