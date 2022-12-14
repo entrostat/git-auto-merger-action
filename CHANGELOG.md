@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/entrostat/git-auto-merger-action/compare/v1.0.1...v1.0.2) (2022-12-14)
+
+
+### Bug Fixes
+
+* **action:** Added keywords to the description to improve search ([3e643f2](https://github.com/entrostat/git-auto-merger-action/commit/3e643f2f728e918b6d11204cbcfa8fac6ffa9b81))
+
 ### [1.0.1](https://github.com/entrostat/git-auto-merger-action/compare/v1.0.0...v1.0.1) (2022-12-14)
 
 
