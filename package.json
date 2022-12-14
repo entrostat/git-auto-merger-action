@@ -1,12 +1,13 @@
 {
   "name": "git-auto-merger-action",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Github Action that tries to merge a base branch into branches you specify and sends an alert if it is not able to do that.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "entro-version --master-branch-name=main",
-    "release:major": "entro-version --master-branch-name=main --standard-version-flags=\"--release-as=major\""
+    "release:major": "entro-version --master-branch-name=main --standard-version-flags=\"--release-as=major\"",
+    "conflict": "echo 'This line is different on other branches to cause a conflict'"
   },
   "repository": {
     "type": "git",

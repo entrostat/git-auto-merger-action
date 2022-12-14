@@ -1,0 +1,53 @@
+# action.yml
+name: 'Git Auto Merger'
+description: 'A Github Action that tries to merge a base branch into branches you specify and sends an alert if it is not able to do that'
+inputs:
+  base-branch:
+    description: The base branch that you would like to merge into the other branches (eg. develop)
+    required: true
+  include-patterns:
+    description: Regex patterns of which branches to include. This should be written as a JSON array of strings (eg. '["^feature\/.*","^feat\/.*"]')
+    required: false
+  exclude-patterns:
+    description: Regex patterns of which branches to exclude, these take preference over inclusion patterns. This should be written as a JSON array of strings (eg. '["^main$"]')
+    required: false
+  smtp-host:
+    description: The hostname of your SMTP server
+    required: false
+  smtp-port:
+    description: The port to use when connecting to the SMTP server
+    required: false
+  smtp-username:
+    description: The username to use when connecting to the SMTP server
+    required: false
+  smtp-password:
+    description: The password to use when connecting to the SMTP server
+    required: false
+  smtp-tls:
+    description: Whether or not TLS should be used
+    required: false
+    default: '0'
+  smtp-from-address:
+    description: The address that the email should come from
+    required: false
+  notification-emails:
+    description: The emails in a JSON array that should receive the notification (eg. '["test@example.com"]')
+    required: false
+  project-name:
+    description: The name of the project sent in emails and other notifications
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.base-branch }}
+    - ${{ inputs.include-patterns }}
+    - ${{ inputs.exclude-patterns }}
+    - ${{ inputs.notification-emails }}
+    - ${{ inputs.smtp-host }}
+    - ${{ inputs.smtp-port }}
+    - ${{ inputs.smtp-username }}
+    - ${{ inputs.smtp-password }}
+    - ${{ inputs.smtp-tls }}
+    - ${{ inputs.smtp-from-address }}
+    - ${{ inputs.project-name }}
