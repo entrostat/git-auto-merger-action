@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "entro-version --master-branch-name=main",
-    "release:major": "entro-version --master-branch-name=main --standard-version-flags=\"--release-as=major\""
+    "release:major": "entro-version --master-branch-name=main --standard-version-flags=\"--release-as=major\"",
+    "conflict": "echo 'This will cause a conflict'"
   },
   "repository": {
     "type": "git",
