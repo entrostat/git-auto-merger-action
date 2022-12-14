@@ -14,10 +14,10 @@ jobs:
           base-branch: 'develop'
           include-patterns: '["feature/.+","feat/.+"]'
           exclude-patterns: '["^main$","^develop$"]'
-          send-smtp-notification: '1'
           smtp-host: ${{ secrets.SMTP_HOST }}
           smtp-port: ${{ secrets.SMTP_PORT }}
           smtp-username: ${{ secrets.SMTP_USERNAME }}
           smtp-password: ${{ secrets.SMTP_PASSWORD }}
           smtp-tls: '0'
           smtp-from-address: ${{ secrets.SMTP_FROM_ADDRESS }}
+          notification-emails: ${{ secrets.NOTIFICATION_EMAILS }}
