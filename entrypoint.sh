@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh -l
 
 which git-auto-merger
 
