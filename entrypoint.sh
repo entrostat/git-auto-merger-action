@@ -17,7 +17,7 @@ EXCLUDE_PATTERN_ENTRIES=$(node /scripts/convert-array-to-args.js $3 --exclude-pa
 NOTIFY_EMAILS=$(node /scripts/convert-array-to-args.js $4 --notify-email)
 
 USE_TLS=$9
-if [[ "$USE_TLS" = "1" || "$USE_TLS" = "true" || "$USE_TLS" = "TRUE"]]
+if [ "$USE_TLS" = "1" ] || ["$USE_TLS" = "true"] || ["$USE_TLS" = "TRUE" ]
 then
   TLS_FLAG="--tls"
 else
