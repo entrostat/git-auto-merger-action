@@ -9,6 +9,9 @@ which git-auto-merger
 #	git config --global --add safe.directory /github/workspace
 git config --global --add safe.directory $(pwd)
 
+git fetch --all
+git pull --all
+
 INCLUDE_PATTERN_ENTRIES=$(node /scripts/convert-array-to-args.js $2 --include-pattern)
 EXCLUDE_PATTERN_ENTRIES=$(node /scripts/convert-array-to-args.js $3 --exclude-pattern)
 
