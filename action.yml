@@ -11,10 +11,6 @@ inputs:
   exclude-patterns:
     description: Regex patterns of which branches to exclude, these take preference over inclusion patterns. This should be written as a JSON array of strings (eg. '["^main$"]')
     required: false
-  send-smtp-notification:
-    description: Whether an SMTP notification should be sent if there is a merge issue
-    required: false
-    default: '0'
   smtp-host:
     description: The hostname of your SMTP server
     required: false
@@ -31,6 +27,12 @@ inputs:
     description: Whether or not TLS should be used
     required: false
     default: '0'
+  smtp-from-address:
+    description: The address that the email should come from
+    required: false
+  notification-emails:
+    description: The emails in a JSON array that should receive the notification (eg. '["test@example.com"]')
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -38,9 +40,10 @@ runs:
     - ${{ inputs.base-branch }}
     - ${{ inputs.include-patterns }}
     - ${{ inputs.exclude-patterns }}
-    - ${{ inputs.send-smtp-notification }}
+    - ${{ inputs.notification-emails }}
     - ${{ inputs.smtp-host }}
     - ${{ inputs.smtp-port }}
     - ${{ inputs.smtp-username }}
     - ${{ inputs.smtp-password }}
     - ${{ inputs.smtp-tls }}
+    - ${{ inputs.smtp-from-address }}
