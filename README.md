@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Check for merge conflicts
-        uses: entrostat/git-auto-merge-action@v1.0.0
+        uses: entrostat/git-auto-merge-action@v1.0.1
         with:
           base-branch: 'develop'
           include-patterns: '["feature/.+","feat/.+","epic/.+","hotfix/.+"]'
