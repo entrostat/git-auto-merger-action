@@ -1,6 +1,7 @@
 # action.yml
 name: 'Git Auto Merger'
-description: 'A Github Action that tries to merge a base branch into branches you specify and sends an alert if it is not able to do that'
+description: 'A Github Action that tries to merge a base branch into branches you specify and sends an alert or notification if it is not able to do that. Keywords: git, merge, auto, notify, alert, conflict, branch, git flow, release, epic, notification, email, cron, schedule, scheduler'
+author: "Kerren Ortlepp"
 branding:
   icon: git-merge
   color: gray-dark
