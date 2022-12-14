@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --update nodejs npm git && \
+RUN apk add --update nodejs npm git bash && \
     npm install -g git-auto-merger
 
 RUN mkdir /scripts
