@@ -11,8 +11,10 @@ git config --global --add safe.directory $(pwd)
 
 set -x
 
-echo $1
-echo $2
-echo $3
+INCLUDE_PATTERN_ENTRIES=$(node /scripts/convert-array-to-args.js $2 --include-pattern)
+EXCLUDE_PATTERN_ENTRIES=$(node /scripts/convert-array-to-args.js $3 --exclude-pattern)
+
+echo $INCLUDE_PATTERN_ENTRIES
+echo $EXCLUDE_PATTERN_ENTRIES
 
 git-auto-merger merge --base-branch=develop --include-pattern='develop$' --include-pattern='feature\/.*' --exclude-pattern='main'
