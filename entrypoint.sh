@@ -26,4 +26,4 @@ fi
 
 git-auto-merger set:credentials:smtp --host=$5 --port=$6 --username=$7 --password=$8 ${TLS_FLAG} --from-address=$10
 
-git-auto-merger merge --base-branch=$1 ${INCLUDE_PATTERN_ENTRIES} ${EXCLUDE_PATTERN_ENTRIES} ${NOTIFY_EMAILS}
+git-auto-merger merge --base-branch=$1 ${INCLUDE_PATTERN_ENTRIES} ${EXCLUDE_PATTERN_ENTRIES} ${NOTIFY_EMAILS} --project-name=$11

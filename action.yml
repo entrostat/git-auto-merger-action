@@ -33,6 +33,9 @@ inputs:
   notification-emails:
     description: The emails in a JSON array that should receive the notification (eg. '["test@example.com"]')
     required: false
+  project-name:
+    description: The name of the project sent in emails and other notifications
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -47,3 +50,4 @@ runs:
     - ${{ inputs.smtp-password }}
     - ${{ inputs.smtp-tls }}
     - ${{ inputs.smtp-from-address }}
+    - ${{ inputs.project-name }}

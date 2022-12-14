@@ -21,3 +21,4 @@ jobs:
           smtp-tls: '0'
           smtp-from-address: ${{ secrets.SMTP_FROM_ADDRESS }}
           notification-emails: ${{ secrets.NOTIFICATION_EMAILS }}
+          project-name: "Git Auto Merger Action Tests"
