@@ -2,11 +2,19 @@
 name: 'Git Auto Merger'
 description: 'A Github Action that tries to merge a base branch into branches you specify and sends an alert if it is not able to do that'
 inputs:
-  base-branch:  # id of input
+  base-branch:
     description: 'The base branch that you would like to merge into the other branches (eg. develop)'
     required: true
+  include-patterns:
+    description: 'Regex patterns of which branches to include (eg. ^feature\/.*)'
+    required: false
+  exclude-patterns:
+    description: 'Regex patterns of which branches to exclude, these take preference over inclusion patterns (eg. ^main$)'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.base-branch }}
+    - ${{ inputs.include-patterns }}
+    - ${{ inputs.exclude-patterns }}

@@ -9,4 +9,10 @@ which git-auto-merger
 #	git config --global --add safe.directory /github/workspace
 git config --global --add safe.directory $(pwd)
 
+set -x
+
+echo $1
+echo $2
+echo $3
+
 git-auto-merger merge --base-branch=develop --include-pattern='develop$' --include-pattern='feature\/.*' --exclude-pattern='main'
