@@ -1,0 +1,2 @@
+# git-auto-merger-action
+
