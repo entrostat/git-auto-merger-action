@@ -8,6 +8,8 @@ which git-auto-merger
 #
 #	git config --global --add safe.directory /github/workspace
 git config --global --add safe.directory $(pwd)
+git config --global user.email "git-auto-merger@git-auto-merger.com"
+git config --global user.name "git-auto-merger"
 
 git fetch --all
 git pull --all
