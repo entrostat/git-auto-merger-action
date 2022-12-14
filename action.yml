@@ -3,13 +3,13 @@ name: 'Git Auto Merger'
 description: 'A Github Action that tries to merge a base branch into branches you specify and sends an alert if it is not able to do that'
 inputs:
   base-branch:
-    description: 'The base branch that you would like to merge into the other branches (eg. develop)'
+    description: The base branch that you would like to merge into the other branches (eg. develop)
     required: true
   include-patterns:
-    description: 'Regex patterns of which branches to include (eg. ^feature\/.*)'
+    description: Regex patterns of which branches to include. This should be written as a JSON array of strings (eg. '["^feature\/.*","^feat\/.*"]')
     required: false
   exclude-patterns:
-    description: 'Regex patterns of which branches to exclude, these take preference over inclusion patterns (eg. ^main$)'
+    description: Regex patterns of which branches to exclude, these take preference over inclusion patterns. This should be written as a JSON array of strings (eg. '["^main$"]')
     required: false
 runs:
   using: 'docker'
