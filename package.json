@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "entro-version --master-branch-name=main",
-    "release:major": "entro-version --master-branch-name=main --standard-version-flags=\"--release-as=major\"",
+    "release": "entro-version release --main-branch-name=main",
+    "release:major": "entro-version release  --main-branch-name=main --standard-version-flags=\"--release-as=major\"",
     "conflict": "echo 'This line is different on other branches to cause a conflict'"
   },
   "repository": {
@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/entrostat/git-auto-merger-action#readme",
   "devDependencies": {
-    "entro-version": "^1.7.0"
+    "entro-version": "^3.0.0"
   }
 }
