@@ -39,4 +39,34 @@ jobs:
           project-name: "<Your Project Name - For the Email Subject>"
 ```
 
-If you don't want the action to merge the changes and push them to the repo. You can set the `skip-merge` flag. So for instance, `skip-merge: "1"`.
+If you don't want the action to merge the changes and push them to the repo. You can set the `skip-merge` flag. So for instance, `skip-merge: "1"`, which would look exactly the same as above except for 1 line:
+
+```yaml
+name: Check for Merge Conflicts
+on:
+  schedule:
+    - cron: '0 5 * * *' # Runs at 5am every day
+jobs:
+  git_auto_merge_job:
+    runs-on: ubuntu-latest
+    name: Check for Merge Conflicts and Notify
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check for merge conflicts
+        uses: entrostat/git-auto-merge-action@v2.0.0
+        with:
+          base-branch: 'develop'
+          include-patterns: '["feature/.+","feat/.+","epic/.+","hotfix/.+"]'
+          exclude-patterns: '["^main$"]'
+          smtp-host: ${{ secrets.SMTP_HOST }}
+          smtp-port: ${{ secrets.SMTP_PORT }}
+          smtp-username: ${{ secrets.SMTP_USERNAME }}
+          smtp-password: ${{ secrets.SMTP_PASSWORD }}
+          smtp-tls: '0'
+          smtp-from-address: ${{ secrets.SMTP_FROM_ADDRESS }}
+          notification-emails: ${{ secrets.NOTIFICATION_EMAILS }}
+          project-name: "<Your Project Name - For the Email Subject>"
+          skip-merge: "1"
+```
