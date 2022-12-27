@@ -34,7 +34,7 @@ then
   echo "Skipping the merge push..."
   PUSH_COMMIT=""
 else
-  PUSH_COMMIT="--commit --push-commit"
+  PUSH_COMMIT="--push-commit"
 fi
 
-git-auto-merger merge --base-branch=$1 ${INCLUDE_PATTERN_ENTRIES} ${EXCLUDE_PATTERN_ENTRIES} ${NOTIFY_EMAILS} --project-name="${11}" ${PUSH_COMMIT}
+git-auto-merger merge --base-branch=$1 ${INCLUDE_PATTERN_ENTRIES} ${EXCLUDE_PATTERN_ENTRIES} ${NOTIFY_EMAILS} --project-name="${11}" --commit ${PUSH_COMMIT}
