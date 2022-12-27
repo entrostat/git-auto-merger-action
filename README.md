@@ -38,3 +38,5 @@ jobs:
           notification-emails: ${{ secrets.NOTIFICATION_EMAILS }}
           project-name: "<Your Project Name - For the Email Subject>"
 ```
+
+If you don't want the action to merge the changes and push them to the repo. You can set the `skip-merge` flag. So for instance, `skip-merge: "1"`.

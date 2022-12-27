@@ -1,6 +1,24 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.0](https://github.com/entrostat/git-auto-merger-action/compare/v1.0.5...v2.0.0) (2022-12-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **merge:** Added the ability to push the changes to the repo #1
+
+### Features
+
+* **merge:** Added the ability to push the changes to the repo [#1](https://github.com/entrostat/git-auto-merger-action/issues/1) ([ea91a13](https://github.com/entrostat/git-auto-merger-action/commit/ea91a1310ef5f06b42cf75d2c978bf23d8083bce))
+* **no-conflict-test:** Adding the test for no conflicts ([5f92c50](https://github.com/entrostat/git-auto-merger-action/commit/5f92c50599246784c785b8c8400d78314e02f53f))
+
+
+### Bug Fixes
+
+* **merge:** Added the --commit flag to the CLI when we push changes ([b619b9e](https://github.com/entrostat/git-auto-merger-action/commit/b619b9e437cbb0ffb1717ccbdace137221de4ac2))
+* **version:** Installed the latest version of entro-version for release management ([05ee6d9](https://github.com/entrostat/git-auto-merger-action/commit/05ee6d9c258ad7db942c3b431ebdd018167361cd))
 
 ### [1.0.5](https://github.com/entrostat/git-auto-merger-action/compare/v1.0.4...v1.0.5) (2022-12-14)
 

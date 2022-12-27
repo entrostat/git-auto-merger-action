@@ -1,0 +1,25 @@
+name: Test Successful Merge
+on: [push]
+
+jobs:
+  test_action:
+    runs-on: ubuntu-latest
+    name: A test action to see that it's all working
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Test the action
+        id: test
+        uses: ./
+        with:
+          base-branch: 'develop'
+          include-patterns: '["feature/.+","feat/.+"]'
+          exclude-patterns: '["^main$","^develop$","feature/conflict-branch"]'
+          smtp-host: ${{ secrets.SMTP_HOST }}
+          smtp-port: ${{ secrets.SMTP_PORT }}
+          smtp-username: ${{ secrets.SMTP_USERNAME }}
+          smtp-password: ${{ secrets.SMTP_PASSWORD }}
+          smtp-tls: '0'
+          smtp-from-address: ${{ secrets.SMTP_FROM_ADDRESS }}
+          notification-emails: ${{ secrets.NOTIFICATION_EMAILS }}
+          project-name: "Git Auto Merger Action Tests"
