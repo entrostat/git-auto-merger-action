@@ -1,6 +1,6 @@
 {
   "name": "git-auto-merger-action",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "A Github Action that tries to merge a base branch into branches you specify and sends an alert if it is not able to do that.",
   "main": "index.js",
   "scripts": {
