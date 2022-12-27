@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://github.com/entrostat/git-auto-merger-action/compare/v2.0.0...v2.1.0) (2022-12-27)
+
+
+### Features
+
+* **merge:** Always commit but don't push if it has been set to skip ([ee066e6](https://github.com/entrostat/git-auto-merger-action/commit/ee066e6ab91a66bbaf68f0d8ad54ebbb0d1fd6a9))
+
 ## [2.0.0](https://github.com/entrostat/git-auto-merger-action/compare/v1.0.5...v2.0.0) (2022-12-27)
 
 
