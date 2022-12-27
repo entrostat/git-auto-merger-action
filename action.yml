@@ -40,6 +40,9 @@ inputs:
   project-name:
     description: The name of the project sent in emails and other notifications
     required: false
+  skip-merge:
+    description: Skip the actual merge and just send the notification
+    default: '0'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -55,3 +58,4 @@ runs:
     - ${{ inputs.smtp-tls }}
     - ${{ inputs.smtp-from-address }}
     - ${{ inputs.project-name }}
+    - ${{ inputs.skip-merge }}
