@@ -22,6 +22,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          # NB! Note the fetch-depth, we need all the branch details to perform this action
+          fetch-depth: 0
 
       - name: Check for merge conflicts
         uses: entrostat/git-auto-merger-action@v2.1.0
