@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check for merge conflicts
-        uses: entrostat/git-auto-merger-action@v2.1.0
+        uses: entrostat/git-auto-merger-action@v2.1.2
         with:
           base-branch: 'develop'
           include-patterns: '["feature/.+","feat/.+","epic/.+","hotfix/.+"]'
